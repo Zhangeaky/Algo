@@ -1,7 +1,7 @@
 package AndOr;
 
 import java.util.HashSet;
-
+/**/
 public class KandM {
 
     public static Integer test(){ return null;  }
