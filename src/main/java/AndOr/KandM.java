@@ -4,10 +4,34 @@ import java.util.HashSet;
 /**/
 public class KandM {
 
-    public static Integer test(){ return null;  }
+    public static Integer test( ){
 
-    public static Integer findKTimesNumber(){
-        return null;
+
+        return null;  }
+
+    public static int findKTimesNumber(int[] inputarray, int k, int m){
+
+        //创建统计数组
+        int[] model = new int[32];
+
+        for (int element:inputarray) {
+            //对输入数组中每个数的每一位0,1情况进行统计
+            for (int i = 0;i<32;i++){
+                if( ((element>>i)&1) != 0 ){
+                    model[i]++;
+                }
+            }
+        }
+
+        int ans = 0;
+        for(int i =0 ;i<32;i++){
+
+            if ((model[i]%m !=0)){
+                ans |= (1<<i);
+            }
+        }
+
+        return ans;
     }
 
     public static int[] randomArray(int maxLen, int range, int k ,int m){
@@ -78,9 +102,9 @@ public class KandM {
             if( k==m ) m++;
 
             int ans1 = test();
-            int ans2 = findKTimesNumber();
+            //int ans2 = findKTimesNumber();
 
-            if(ans1 !=ans2) System.out.println("测试失败！");
+            //if(ans1 !=ans2) System.out.println("测试失败！");
         }
 
         System.out.println("测试结束！");
@@ -88,3 +112,4 @@ public class KandM {
 
 
 }
+
