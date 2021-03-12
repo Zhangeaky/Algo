@@ -42,6 +42,15 @@ public class Basic {
         return pre;
     }
 
+    public static LinkedNode fanzhuanlianbiao(LinkedNode head){
+
+       // while ()
+
+
+
+        return null;
+
+    }
 
     //Leetcode 24
     public static LinkedNode swap(LinkedNode head){
