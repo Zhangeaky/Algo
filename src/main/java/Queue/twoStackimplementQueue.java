@@ -4,46 +4,49 @@ import java.util.Stack;
 
 public class twoStackimplementQueue {
 
-    private int size;
-    private final Stack<Integer> one;
-    private final Stack<Integer> two;
+    private Stack<Integer> one;
+    private Stack<Integer> two;
 
-    twoStackimplementQueue(){
-        this.one = new Stack<>();
-        this.two = new Stack<>();
-        System.out.println(this.size);
+    public twoStackimplementQueue() {
+        one = new Stack<>();
+        two = new Stack<>();
     }
 
-    public void add(int element){
-        one.push(element);
+    public void add(int input){
+
+        one.push(input);
         pour();
+
+
     }
 
-    public int pop(){
-        if(one.isEmpty()&&two.isEmpty()){
-            throw new RuntimeException("队列已经空了");
+    public Integer pop() throws Exception {
+
+        pour();
+        if(two.isEmpty()){
+            throw new Exception("队列为空");
         }
-
-        pour();
-
-        return (int)two.pop();
-
+        return two.pop();
     }
-//    public int peek(){
-//
-//        if ()
-//
-//    }
+
+    public Integer peek(){
+
+        return null;
+    }
 
     private void pour(){
 
-        if ( two.isEmpty() ){
+        //将one 栈中的数据导入 two中
+        //要将 while 改成if 因为 执行一次外层while
+        // 如果 都是空 就变成死循环了
+        if(two.isEmpty()){
             while (!one.isEmpty()){
-
                 two.push(one.pop());
             }
         }
     }
+
+
 
 
 
